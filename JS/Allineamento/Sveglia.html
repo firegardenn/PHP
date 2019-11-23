@@ -1,0 +1,82 @@
+<html>
+    <head>
+            <meta charset="utf-8">
+            <!--<META HTTP-EQUIV="refresh" CONTENT="1">-->
+            <h1 style="text-align: center;">Esercizio1_Sveglia</h1>
+    </head>
+    <body >
+        <div>
+            <form action="" name="form">
+                Inserire una data e un orario
+                <input type="datetime-local" name= "dataSveglia" value="yyyy-MM-ddThh:mm">
+                
+            </form>
+            <button onclick="myFunction()">Invia</button>
+            <input type="button" value="Reset" onClick="window.location.reload()">
+            <p id="p"></p>
+        </div>
+        <script>
+            var date = new Date();
+            var millisecondsDate = date.getTime();
+            var stringSveglia=null;
+            var countdown=null;
+            var dataSveglia=null;
+            var oraColore = null;
+            function myFunction(){
+                stringSveglia=document.querySelector('input[type="datetime-local"]').value;
+                //annoSveglia = stringSveglia.substring(0,4);
+                if(document.querySelector('input[type="datetime-local"]')!=null){
+                    dateSveglia = new Date(stringSveglia);
+                    if(date.getTime()>dateSveglia.getTime()){
+                        alert("Inserire una data successiva ad oggi");
+                        return;
+                    }
+                    else
+                    {
+                        localStorage.setItem("sveglia", dateSveglia.getTime());
+                        oraColore = localStorage.getItem("cntdwn")
+                        repeat();
+                    }
+                }
+                
+            }
+            function bgColor(){
+                oraColore = localStorage.getItem("cntdwn")/(1000*60*60)
+                if(oraColore<6){
+                    document.body.style.backgroundColor = "red";
+                }
+                if((oraColore>6)&&(oraColore<=8)){
+                        document.body.style.backgroundColor = "yellow";
+                }
+                if((oraColore>8)&&(oraColore<=10)){
+                    document.body.style.backgroundColor = "green";
+                }
+                if(oraColore>10){
+                    document.body.style.backgroundColor = "blue";
+                }
+            }
+            function repeat(){
+                var date2 = new Date();
+                countdown = localStorage.getItem("sveglia")-date2.getTime();
+                localStorage.setItem("cntdwn", countdown);
+                bgColor();
+                var ore = date2.getHours();
+                var minuti = date2.getMinutes();
+                var secondi = date2.getSeconds();
+                document.getElementById("p").innerHTML="<p>" + ore + ":" + minuti + ":" + secondi + "</p>";
+                if(countdown>0){
+                    window.setTimeout(repeat, 1000);
+                    
+                }
+                else{
+                    alarm();
+                }
+                
+            }
+            function alarm(){
+                var snd = new Audio("alarm.mp3");
+                snd.play();
+            }
+        </script>
+    </body>
+</html>
