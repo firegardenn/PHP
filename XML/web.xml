@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<rubrica>
+	<persona>
+		<nome>Cristian<nome>
+        <cognome>Marchesi</cognome>
+        <telefono_casa>035734445</telefono_casa>
+        <telefono_lavoro>3339090900<telefono_lavoro>
+		<indirizzo_email>pippo@alice.it<indirizzo_email>
+	</persona>
+	<persona>
+		<nome>Laura<nome>
+        <cognome>Giannini</cognome>
+        <telefono_casa>02113344</telefono_casa>
+        <telefono_lavoro>3324456660<telefono_lavoro>
+		<indirizzo_email>pluto@gmail.com<indirizzo_email>
+	</persona>
+</rubrica>
