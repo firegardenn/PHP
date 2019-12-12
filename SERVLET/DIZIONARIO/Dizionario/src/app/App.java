@@ -61,7 +61,7 @@ public class App extends HttpServlet{
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
         res.setContentType("text/html");
               
-        PrintWriter out = res.getWriter();
+        //PrintWriter out = res.getWriter();
         /*if(add!=null){
             //req.setAttribute("add", def = new Definizione(add));
             //diz.addDef(def);
