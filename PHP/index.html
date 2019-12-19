@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body >
+    <form name = mf action = "Dizionario.php" method="POST">
+        Parola: <input  name= "newParola"></input>
+        Definizione: <input  name= "definizione"></input>
+        <button type="submit">Aggiungi parola</button></form><br>
+    </form>
+    <form name = mf action="Dizionario.php" method="GET">
+        <input type="text" name="parola">
+        <button type ="submit" value="Submit">Cerca parola</button><br><br>
+        
+    </form>
+    <form name= mf action="Dizionario.php" method="POST">
+        <input type="text" name="delete">
+        <button type="submit" value="Submit">Cancella parola</button>
+    </form>
+    
+</body>
+</html>
