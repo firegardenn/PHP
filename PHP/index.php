@@ -2,7 +2,7 @@
 <body>
 
 <?php
-$string=file_get_contents('Dizionario.json');
+$string=file_get_contents('composer.json');
 $decode = json_decode($string, true);
 $name=$_POST["newParola"];
 $name2=$_GET["parola"];
@@ -44,7 +44,7 @@ $definizione=$_POST["definizione"];
 $decode[$name]=$definizione;
 $decode=json_encode($decode, true);
 
-file_put_contents("Dizionario.json", $decode);
+file_put_contents("composer.json", $decode);
 
 ?>
 </body>
