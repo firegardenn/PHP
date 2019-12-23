@@ -2,7 +2,7 @@
 <body>
 
 <?php
-include_once("index.html");
+
 $string=file_get_contents('dizionario.json');
 $decode = json_decode($string, true);
 $name=$_POST["newParola"];
