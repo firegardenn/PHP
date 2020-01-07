@@ -1,7 +1,7 @@
 <?php
      
     session_start();
-    if ($_SESSION['count']==null) 
+    if ($_SESSION['count']) 
      $_SESSION['count'] = 1;
     else
     $_SESSION['count']++;
